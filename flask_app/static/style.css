@@ -1,0 +1,28 @@
+
+
+.wholepage{
+    display: flex;
+    padding: 50px;
+
+}
+
+.col1{
+    flex: 1;
+    margin-left: 130px;
+    background-color: lightblue;
+}
+
+.col2{
+    flex: 1;
+    background-color: lightblue;
+}
+
+.col3{
+    flex: 1;
+    margin-right: 130px;
+    background-color: lightblue;
+}
+
+.btn{
+    margin-top: 15px;
+}

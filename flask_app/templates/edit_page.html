@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="wholepage">
+        <a href="/logout">Logout</a>
+        <h3><a href="/user_page">Back to recipes</a></h3>
+        <div class="col1">
+            <h2>Make a recipe!</h2>
+            <form action="/update" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" value="{{recipe.name}}" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea class="form-control" id="description" name="description"
+                        placeholder="enter a description of your recipe" rows="3" required>{{recipe.description}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="instructions">Instructions:</label>
+                    <textarea class="form-control" id="instructions" name="instructions"
+                        placeholder="Enter instructions" rows="5" required>{{recipe.instructions}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="under30">Under 30 minutes:</label>
+                    <select class="form-control" id="under30" name="under30" required>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <input type="hidden" id="id" name="id" value="{{recipe.id}}">
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col2"></div>
+        <div class="col3"></div>
+    </div>
+</body>
+
+</html>
